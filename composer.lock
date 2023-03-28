@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1ed4555df546fd73a2d35808c382628",
+    "content-hash": "44c3da7a63450f18abda7e8850a93eb1",
     "packages": [
         {
             "name": "brick/math",
@@ -1026,6 +1026,54 @@
             "time": "2021-10-07T12:57:01+00:00"
         },
         {
+            "name": "laravel-frontend-presets/material-dashboard",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-frontend-presets/material-dashboard.git",
+                "reference": "29c7109dff7ed43fc8983c750d539b418075cc92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/material-dashboard/zipball/29c7109dff7ed43fc8983c750d539b418075cc92",
+                "reference": "29c7109dff7ed43fc8983c750d539b418075cc92",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^9.0",
+                "laravel/legacy-factories": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelFrontendPresets\\MaterialPreset\\MaterialPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelFrontendPresets\\MaterialPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel 9.x Front-end preset for material",
+            "homepage": "https://github.com/creativetimofficial/material-dashboard-laravel",
+            "keywords": [
+                "laravel",
+                "material",
+                "preset"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-frontend-presets/material-dashboard/issues",
+                "source": "https://github.com/laravel-frontend-presets/material-dashboard/tree/v2.0.2"
+            },
+            "time": "2022-11-17T09:37:00+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v9.52.4",
             "source": {
@@ -1222,6 +1270,62 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2023-02-22T14:38:06+00:00"
+        },
+        {
+            "name": "laravel/legacy-factories",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/legacy-factories.git",
+                "reference": "cc6720da81094c82ea9f4737d615dd3d71f7f43d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/legacy-factories/zipball/cc6720da81094c82ea9f4737d615dd3d71f7f43d",
+                "reference": "cc6720da81094c82ea9f4737d615dd3d71f7f43d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/macroable": "^8.0|^9.0|^10.0",
+                "php": "^7.3|^8.0",
+                "symfony/finder": "^3.4|^4.0|^5.0|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Illuminate\\Database\\Eloquent\\LegacyFactoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Illuminate\\Database\\Eloquent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The legacy version of the Laravel Eloquent factories.",
+            "homepage": "http://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2023-01-09T14:49:00+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1477,6 +1581,78 @@
                 "source": "https://github.com/laravel/ui/tree/v4.2.1"
             },
             "time": "2023-02-17T09:17:24+00:00"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v6.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "ac74f580459a5120079b8def0404e5d312a09504"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/ac74f580459a5120079b8def0404e5d312a09504",
+                "reference": "ac74f580459a5120079b8def0404e5d312a09504",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/routing": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/session": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/view": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~8.5|^9.5.10"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                },
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "support": {
+                "issues": "https://github.com/LaravelCollective/html/issues",
+                "source": "https://github.com/LaravelCollective/html"
+            },
+            "time": "2023-02-13T18:15:35+00:00"
         },
         {
             "name": "league/commonmark",
@@ -3048,6 +3224,88 @@
                 }
             ],
             "time": "2023-01-12T18:13:24+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "5.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "5d0a703ece4636e6bde98eb85ac72b40aa6e42bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/5d0a703ece4636e6bde98eb85ac72b40aa6e42bc",
+                "reference": "5d0a703ece4636e6bde98eb85ac72b40aa6e42bc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/container": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/database": "^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
+                "phpunit/phpunit": "^9.4",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "5.x-dev",
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 6.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/5.10.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-03-22T02:57:36+00:00"
         },
         {
             "name": "symfony/console",
