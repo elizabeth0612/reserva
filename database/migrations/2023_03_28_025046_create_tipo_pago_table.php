@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_pago', function (Blueprint $table) {
-            $table->id('id_tipo_pago');
+        Schema::create('type_payments', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_pago');
+        Schema::dropIfExists('type_payments');
     }
 };

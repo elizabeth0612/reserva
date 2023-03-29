@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('distrito', function (Blueprint $table) {
-            $table->increments('id_distrito');
+        Schema::create('districts', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('distrito');
+        Schema::dropIfExists('districts');
     }
 };

@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_tarjeta', function (Blueprint $table) {
-            $table->increments('id_tipo_tarjeta');
+        Schema::create('card_types', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre');
             $table->timestamps();
         });

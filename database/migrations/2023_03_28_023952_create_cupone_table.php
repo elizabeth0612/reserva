@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cupones', function (Blueprint $table) {
-            $table->increments('id_cupon');
+        Schema::create('coupons', function (Blueprint $table) {
+            $table->id();
             $table->double('descuento');
             $table->boolean('estado');
             $table->timestamps();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cupones');
+        Schema::dropIfExists('coupons');
     }
 };
