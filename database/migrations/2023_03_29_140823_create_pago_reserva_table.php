@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pago_reserva', function (Blueprint $table) {
+        Schema::create('payment_reservations', function (Blueprint $table) {
             $table->id();
             $table->string('numero_celular');
             $table->string('numero_documento');

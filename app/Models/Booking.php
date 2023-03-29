@@ -14,6 +14,9 @@ class Booking extends Model
         'precio',
         'cantidad_dias',
         'fecha_entrada',
-        'fecha_salida'
+        'fecha_salida',
+        'fecha_registro',
+        'coupon_id',
+        'estado'
     ];
 }
