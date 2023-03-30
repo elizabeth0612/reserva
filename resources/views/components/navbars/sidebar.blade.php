@@ -53,7 +53,6 @@
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#headingOne">
-                        
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <a class="nav-link text-white" href="{{ route('dashboard') }}">
                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
@@ -64,13 +63,13 @@
                         </div>
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <a class="nav-link text-white {{ $activePage == 'Reservas Realizadas' ? 'active bg-gradient-primary' : '' }} "
-                                href="{{ route('user-profile') }}">
-                                <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
-                                    <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
-                                </div>
-                                <span class="nav-link-text ms-1">Reservas Realizadas</span>
-                            </a>
-                        </div>
+                                    href="{{ route('user-profile') }}">
+                                    <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
+                                        <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">Reservas Realizadas</span>
+                                </a>
+                            </div>
                         </div>
                             
                         </div>
