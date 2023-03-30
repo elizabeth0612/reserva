@@ -21,21 +21,21 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Opciones</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'user-management' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{ route('user-management') }}">
+                <a class="nav-link text-white" href="{{ route('user-management') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center"></i>
                     </div>
                     <span class="nav-link-text ms-1">Inmuebles</span>
                 </a>
             </li>
+            
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'user-profile' ? 'active bg-gradient-primary' : '' }} "
-                    href="{{ route('user-profile') }}">
+                <a class="nav-link text-white"
+                    href="{{ route('clientes') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1.2rem;" class="fas fa-user-circle  text-center"></i>
                     </div>
-                    <span class="nav-link-text ms-1">User Profile</span>
+                    <span class="nav-link-text ms-1">Clientes</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -62,7 +62,7 @@
                             </a>
                         </div>
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <a class="nav-link text-white {{ $activePage == 'Reservas Realizadas' ? 'active bg-gradient-primary' : '' }} "
+                                <a class="nav-link text-white"
                                     href="{{ route('user-profile') }}">
                                     <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                         <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
@@ -76,47 +76,63 @@
 
                        
                         </div>
-                    
+                    </li>
+                    <li class="nav-item">
+                     <div class="accordion" id="accordionExample">
+                         <div class="accordion-item">
+                           <h2 class="accordion-header" id="headingOne">
+                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                 <a class="nav-link text-white "
+                                 href="{{ route('user-profile') }}">
+                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
+                                     <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
+                                 </div>
+                                 <span class="nav-link-text ms-1">Informes</span>
+                             </a>
+                             </button>
+                           </h2>
+                           <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#headingOne">
+                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                     <a class="nav-link text-white" href="{{ route('dashboard') }}">
+                                     <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
+                                         <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
+                                     </div>
+                                     <span class="nav-link-text ms-1">Reservas Pendientes</span>
+                                 </a>
+                             </div>
+                                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                     <a class="nav-link text-white"
+                                         href="{{ route('user-profile') }}">
+                                         <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
+                                             <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
+                                         </div>
+                                         <span class="nav-link-text ms-1">Reservas Realizadas</span>
+                                     </a>
+                                 </div>
+                             </div>
+                                 
+                             </div>
+     
+                             </div>
+                             <li class="nav-item">
+                                <a class="nav-link text-white " href="{{ route('static-sign-in') }}">
+                                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                        <i class="material-icons opacity-10">login</i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">Sign In</span>
+                                </a>
+                            </li>
+                         </div>
+                         
+                       </div>
+                     
+                 </li>
+                 
                     </div>
-
+                    
                   </div>
                 
-            </li>
-          
-            <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Pages</h6>
-            </li>
            
-            <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'tables' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{ route('tables') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">table_view</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Tables</span>
-                </a>
-            </li>
-          
-            <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'profile' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('profile') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">person</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Profile</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white " href="{{ route('static-sign-in') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">login</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Sign In</span>
-                </a>
-            </li>
             
         </ul>
     </div>
