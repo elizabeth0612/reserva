@@ -29,8 +29,8 @@ class RoleSeeder extends Seeder
         $permission6 = Permission::create(['name' => 'ver.informes.anuales']);
 
         $permission7 = Permission::create(['name' => 'ver.administradores']);
-        $permission12 = Permission::create(['name' => 'ver.cupones.vigente']);
-        $permission13 = Permission::create(['name' => 'ver.cupones.consumidos']);
+        $permission8 = Permission::create(['name' => 'ver.cupones.vigente']);
+        $permission9 = Permission::create(['name' => 'ver.cupones.consumidos']);
 
         $permission1->assignRole($role1);
         $permission2->assignRole($role1);
@@ -40,8 +40,11 @@ class RoleSeeder extends Seeder
         $permission6->assignRole($role1);
 
         $permission7->assignRole($role2);
+        $permission8->assignRole($role2);
+        $permission9->assignRole($role2);
 
         $permission4->syncRoles([$role1, $role2]);
+
 
     }
 }
