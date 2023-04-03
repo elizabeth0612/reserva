@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card my-4">
-                       
+
                         <div class=" me-3 my-3 text-end">
                             <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i
                                     class="material-icons text-sm">add</i>&nbsp;&nbsp;AGREGAR</a>
@@ -23,7 +23,7 @@
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 CODIGO
                                             </th>
-                                            
+
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 IMAGEN
@@ -95,8 +95,8 @@
                                                     <i class="material-icons">book</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
-                                                
-                                                
+
+
                                                 <button type="button" class="btn btn-danger btn-link"
                                                 data-original-title="" title="">
                                                 <i class="material-icons">close</i>
@@ -104,7 +104,7 @@
                                             </button>
                                             </td>
                                         </tr>
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
