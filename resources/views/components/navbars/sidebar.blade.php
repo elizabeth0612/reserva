@@ -15,7 +15,6 @@
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-1">
-    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Opciones</h6>
@@ -71,10 +70,7 @@
                                 </a>
                             </div>
                         </div>
-
                         </div>
-
-
                         </div>
                     </li>
                     <li class="nav-item">
@@ -126,15 +122,12 @@
 
                        </div>
 
-                 </li>
+                    </li>
 
-                    </div>
+                </div>
 
-                  </div>
-
-
-
+            </div>
         </ul>
-    </div>
+
 
 </aside>
