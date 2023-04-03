@@ -6,6 +6,7 @@ use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\InmuebleController;
+use App\Http\Controllers\AdmiController;
 
 
 
@@ -91,5 +92,7 @@ Route::get('/informes-anuales', [InformeController::class, 'index'])->name('anua
 Route::get('/informes-mensuales', [InformeController::class, 'informe'])->name('mensuales');
 
 Route::get('/inmueble-inmueble', [InmuebleController::class, 'index'])->name('inmueble');
+
+Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
 
 

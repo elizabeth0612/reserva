@@ -5,7 +5,6 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Navbar -->
-                    <x-navbars.navs.guest signin='login' signup='register'></x-navbars.navs.guest>
                     <!-- End Navbar -->
                 </div>
             </div>
@@ -22,17 +21,16 @@
                                 </div>
                             </div>
                             <div
-                                class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
-                                <div class="card card-plain">
+                                class="col-xl-4 col-lg-4 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+                                <div class="card">
                                     <div class="card-header">
-                                        <h4 class="font-weight-bolder">Sign Up</h4>
-                                        <p class="mb-0">Enter your name, email and password to register</p>
+                                        <h4 class="font-weight-bolder text-center">Registrar</h4>
                                     </div>
                                     <div class="card-body">
                                         <form method="POST" action="{{ route('register') }}">
                                             @csrf
                                             <div class="input-group input-group-outline mt-3">
-                                                <label class="form-label">Name</label>
+                                                <label class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" name="name"
                                                     value="{{ old('name') }}">
                                             </div>
@@ -40,7 +38,7 @@
                                             <p class='text-danger inputerror'>{{ $message }} </p>
                                             @enderror
                                             <div class="input-group input-group-outline mt-3">
-                                                <label class="form-label">Email</label>
+                                                <label class="form-label">Correo Electronico</label>
                                                 <input type="email" class="form-control" name="email"
                                                     value="{{ old('email') }}">
                                             </div>
@@ -48,7 +46,7 @@
                                             <p class='text-danger inputerror'>{{ $message }} </p>
                                             @enderror
                                             <div class="input-group input-group-outline mt-3">
-                                                <label class="form-label">Password</label>
+                                                <label class="form-label">Contraseña</label>
                                                 <input type="password" class="form-control" name="password">
                                             </div>
                                             @error('password')
@@ -58,22 +56,21 @@
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="flexCheckDefault" checked>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    I agree the <a href="javascript:;"
-                                                        class="text-dark font-weight-bolder">Terms and Conditions</a>
+                                                    Acepto los <a href="javascript:;"
+                                                        class="text-dark font-weight-bolder">Términos y Condiciones</a>
                                                 </label>
                                             </div>
                                             <div class="text-center">
                                                 <button type="submit"
-                                                    class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign
-                                                    Up</button>
+                                                    class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Registrarse</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                         <p class="mb-2 text-sm mx-auto">
-                                            Already have an account?
+                                            ¿Ya tienes una cuenta?
                                             <a href="{{ route('login') }}"
-                                                class="text-primary text-gradient font-weight-bold">Sign in</a>
+                                                class="text-primary text-gradient font-weight-bold"> Iniciar sesión</a>
                                         </p>
                                     </div>
                                 </div>
@@ -89,7 +86,7 @@
     <script src="{{ asset('assets') }}/js/jquery.min.js"></script>
     <script>
         $(function() {
-    
+
         var text_val = $(".input-group input").val();
         if (text_val === "") {
           $(".input-group").removeClass('is-filled');
