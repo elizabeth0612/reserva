@@ -28,7 +28,7 @@
                     <span class="nav-link-text ms-1">Inmuebles</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link text-white"
                     href="{{ route('clientes') }}">
@@ -54,7 +54,7 @@
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#headingOne">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <a class="nav-link text-white" href="{{ route('dashboard') }}">
+                                <a class="nav-link text-white" href="{{ route('pendientes') }}">
                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                     <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                 </div>
@@ -63,7 +63,7 @@
                         </div>
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <a class="nav-link text-white"
-                                    href="{{ route('user-profile') }}">
+                                    href="{{ route('realizadas') }}">
                                     <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                         <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                     </div>
@@ -71,10 +71,10 @@
                                 </a>
                             </div>
                         </div>
-                            
+
                         </div>
 
-                       
+
                         </div>
                     </li>
                     <li class="nav-item">
@@ -93,26 +93,26 @@
                            </h2>
                            <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#headingOne">
                              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                     <a class="nav-link text-white" href="{{ route('dashboard') }}">
+                                     <a class="nav-link text-white" href="{{ route('anuales') }}">
                                      <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                          <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                      </div>
-                                     <span class="nav-link-text ms-1">Reservas Pendientes</span>
+                                     <span class="nav-link-text ms-1">Informes anuales</span>
                                  </a>
                              </div>
                                  <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                      <a class="nav-link text-white"
-                                         href="{{ route('user-profile') }}">
+                                         href="{{ route('mensuales') }}">
                                          <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                              <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                          </div>
-                                         <span class="nav-link-text ms-1">Reservas Realizadas</span>
+                                         <span class="nav-link-text ms-1">Informes mensuales</span>
                                      </a>
                                  </div>
                              </div>
-                                 
+
                              </div>
-     
+
                              </div>
                              <li class="nav-item">
                                 <a class="nav-link text-white " href="{{ route('static-sign-in') }}">
@@ -123,18 +123,18 @@
                                 </a>
                             </li>
                          </div>
-                         
+
                        </div>
-                     
+
                  </li>
-                 
+
                     </div>
-                    
+
                   </div>
-                
-           
-            
+
+
+
         </ul>
     </div>
-    
+
 </aside>

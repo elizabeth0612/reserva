@@ -6,7 +6,7 @@
         <div class="card-header pb-0 pt-3">
             <div class="float-start">
                 <h5 class="mt-3 mb-0">Configuracion</h5>
-                <p>Edtar</p>
+                <p>Editar</p>
             </div>
             <div class="float-end mt-4">
                 <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
@@ -38,7 +38,7 @@
             <!-- Sidenav Type -->
             <div class="mt-3">
                 <h6 class="mb-0">Colores de Barra Lateral</h6>
-                
+
             </div>
             <div class="d-flex">
                 <button class="btn bg-gradient-dark px-2 mb-2 active" data-class="bg-gradient-dark"
@@ -48,7 +48,7 @@
                 <button class="btn bg-gradient-dark px-2 mb-2 ms-2" data-class="bg-white"
                     onclick="sidebarType(this)">Blanco</button>
             </div>
-           
+
             <!-- Navbar Fixed -->
             <div class="mt-3 d-flex">
                 <h6 class="mb-0">Barra de navegación fija</h6>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <hr class="horizontal dark my-sm-4">
-            
+
         </div>
     </div>
 </div>
