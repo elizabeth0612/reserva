@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InformeController;
+use App\Http\Controllers\InmuebleController;
 
 
 
@@ -89,5 +90,6 @@ Route::get('/reservas-realizadas', [ReservaController::class, 'realizadas'])->na
 Route::get('/informes-anuales', [InformeController::class, 'index'])->name('anuales');
 Route::get('/informes-mensuales', [InformeController::class, 'informe'])->name('mensuales');
 
+Route::get('/inmueble-inmueble', [InmuebleController::class, 'index'])->name('inmueble');
 
 

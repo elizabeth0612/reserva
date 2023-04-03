@@ -21,7 +21,7 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Opciones</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ route('user-management') }}">
+                <a class="nav-link text-white" href="{{ route('inmueble') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center"></i>
                     </div>
@@ -31,7 +31,7 @@
 
             <li class="nav-item">
                 <a class="nav-link text-white"
-                    href="{{ route('clientes') }}">
+                    href="{{ route('user-management') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1.2rem;" class="fas fa-user-circle  text-center"></i>
                     </div>
