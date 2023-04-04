@@ -20,68 +20,66 @@
                                     <thead>
                                         <tr>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-1">
                                                 CODIGO
                                             </th>
 
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                IMAGEN
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-1">
+                                                Nombre
                                             </th>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                NOMBRE
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-7">
+                                                Correo
                                             </th>
 
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                DESCRIPCION
+                                                Telefono
                                             </th>
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                PRECIO
+                                                Direccion
                                             </th>
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                DISTRITO
+                                                Descripcion
                                             </th>
                                             <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($clientes as $cliente)
+
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <p class="mb-0 text-sm">1</p>
+                                                        <p class="mb-0 text-sm">{{ $cliente->id}}</p>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="{{ asset('assets') }}/img/team-2.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
-                                                    </div>
 
-                                                </div>
-                                            </td>
                                             <td>
                                                 <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">John</h6>
+                                                    <h6 class="mb-0 text-sm">{{ $cliente->name}}</h6>
 
                                                 </div>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <p class="text-xs text-secondary mb-0">john@creative-tim.com
+                                                <p class="text-xs text-secondary mb-0">{{ $cliente->email}}
                                                 </p>
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">Admin</span>
+                                                <span class="text-secondary text-xs font-weight-bold">{{ $cliente->phone}}</span>
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">22/03/18</span>
+                                                <span class="text-secondary text-xs font-weight-bold">{{$cliente->location }}</span>
                                             </td>
+                                            <td class="align-middle text-center">
+                                                <span class="text-secondary text-xs font-weight-bold">{{$cliente->about }}</span>
+                                            </td>
+
                                             <td class="align-middle">
                                                 <a rel="tooltip" class="btn btn-success btn-link"
                                                     href="" data-original-title=""
@@ -104,6 +102,9 @@
                                             </button>
                                             </td>
                                         </tr>
+
+
+                                        @endforeach
 
                                     </tbody>
                                 </table>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ClienteController extends Controller
 {
@@ -13,7 +14,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return view('pages.laravel-examples.user-management');
+        $clientes=User::where('role',0)->get();
+        return view('pages.laravel-examples.user-management',compact('clientes') );
     }
 
     /**
