@@ -7,6 +7,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\InmuebleController;
 use App\Http\Controllers\AdmiController;
+use App\Http\Controllers\CuponController;
 
 
 
@@ -94,5 +95,10 @@ Route::get('/informes-mensuales', [InformeController::class, 'informe'])->name('
 Route::get('/inmueble-inmueble', [InmuebleController::class, 'index'])->name('inmueble');
 
 Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
+
+Route::get('/cupon-cupon_consumidos', [CuponController::class, 'index'])->name('cupon_consumidos');
+Route::get('/cupon-cupon_vigentes', [CuponController::class, 'vigentes'])->name('cupon_vigentes');
+
+Route::get('/admi-administradores', [AdmiController::class, 'administradores'])->name('administradores');
 
 

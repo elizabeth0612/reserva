@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdmiController extends Controller
+class CuponController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,13 @@ class AdmiController extends Controller
     public function index()
     {
         //
-        return view ('admi.admi');
+        return view ('cupon.cupon_consumidos');
     }
 
-    public function administradores()
+    public function vigentes()
     {
         //
-        return view ('administradores.administradores');
+        return view ('cupon.cupon_vigentes');
     }
 
     /**

@@ -18,7 +18,7 @@
         </li>
         @can('ver.administradores')
         <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('inmueble') }}">
+            <a class="nav-link text-white" href="{{ route('administradores') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center"></i>
                 </div>
@@ -140,7 +140,7 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#headingOne">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <a class="nav-link text-white" href="{{ route('pendientes') }}">
+                            <a class="nav-link text-white" href="{{ route('cupon_vigentes') }}">
                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                     <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                 </div>
@@ -148,7 +148,7 @@
                             </a>
                         </div>
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <a class="nav-link text-white" href="{{ route('realizadas') }}">
+                            <a class="nav-link text-white" href="{{ route('cupon_consumidos') }}">
                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                     <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                 </div>

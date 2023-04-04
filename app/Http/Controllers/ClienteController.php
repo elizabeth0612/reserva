@@ -13,7 +13,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return view('cliente.index');
+        return view('pages.laravel-examples.user-management');
     }
 
     /**
