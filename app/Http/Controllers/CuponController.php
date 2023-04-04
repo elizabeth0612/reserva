@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Coupon;
 
 class CuponController extends Controller
 {
@@ -14,13 +15,15 @@ class CuponController extends Controller
     public function index()
     {
         //
-        return view ('cupon.cupon_consumidos');
+        $cupones=Coupon::where('estado',1)->get();
+        return view('cupon.cupon_consumidos',compact('cupones') );
     }
 
     public function vigentes()
     {
         //
-        return view ('cupon.cupon_vigentes');
+        $cupones=Coupon::where('estado',0)->get();
+        return view('cupon.cupon_vigentes',compact('cupones') );
     }
 
     /**

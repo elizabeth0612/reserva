@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Booking;
 
 class ReservaController extends Controller
 {
@@ -14,13 +15,15 @@ class ReservaController extends Controller
     public function index()
     {
         //
-        return view ('reservas.reservas_pendientes');
+        $reservas=Booking::where('estado',0)->get();
+        return view('reservas.reservas_pendientes',compact('reservas') );
     }
 
     public function realizadas()
     {
         //
-        return view ('reservas.reservas_realizadas');
+        $reservas=Booking::where('estado',1)->get();
+        return view('reservas.reservas_realizadas',compact('reservas') );
     }
 
     /**

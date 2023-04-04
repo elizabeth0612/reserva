@@ -16,6 +16,6 @@ class InmuebleSeeder extends Seeder
     {
         //
 
-        Inmuebles::factory()->count(10)->create();
+        Propertie::factory()->count(10)->create();
     }
 }

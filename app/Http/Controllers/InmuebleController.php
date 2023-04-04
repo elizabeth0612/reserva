@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Propertie;
 
 class InmuebleController extends Controller
 {
@@ -14,7 +15,8 @@ class InmuebleController extends Controller
     public function index()
     {
         //
-        return view ('inmueble.index');
+        $inmuebles=Propertie::all();
+        return view('inmueble.index',compact('inmuebles') );
     }
 
     /**

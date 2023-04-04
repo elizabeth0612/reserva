@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Booking;
+
 
 class InformeController extends Controller
 {
@@ -14,13 +16,15 @@ class InformeController extends Controller
     public function index()
     {
         //
-        return view ('informes.informes_anuales');
+        $informes=Booking::where('estado',0)->get();
+        return view('informes.informes_mensuales',compact('informes') );
     }
 
     public function informe()
     {
         //
-        return view ('informes.informes_mensuales');
+        $informes=Booking::where('estado',0)->get();
+        return view('informes.informes_anuales',compact('informes') );
     }
 
     /**
