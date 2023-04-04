@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -28,5 +29,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'gerente@material.com',
             'password' => ('secret')
         ])->assignRole('gerente');
+
+        User::factory()->count(10)->create();
+
     }
 }
