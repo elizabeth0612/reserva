@@ -12,6 +12,8 @@ use App\Models\TypePayment;
 use App\Models\DocumentTypes;
 use App\Models\CardType;
 use App\Models\Booking;
+use App\Models\PaymentReservation;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -94,6 +96,17 @@ class DatabaseSeeder extends Seeder
             'user_id' => 1,
             'coupon_id' => 1,
             'propertie_id' => 1
+        ]);
+
+        PaymentReservation::factory()->create([
+            'booking_id' => 2,
+            'type_payment_id' => 1,
+            'numero_celular' => '987456123',
+            'document_type_id' => 1,
+            'numero_documento' => '72844014',
+            'numero_tarjeta' => '784563219874512354',
+            'card_type_id' => 1,
+            'pago_costo' => 300.01,
         ]);
 
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Propertie;
 use App\Models\Booking;
+use App\Models\PaymentReservation;
 
 class PropertieSeeder extends Seeder
 {
@@ -20,6 +21,7 @@ class PropertieSeeder extends Seeder
 
         Propertie::factory()->count(10)->create();
         Booking::factory()->count(10)->create();
+        PaymentReservation::factory()->count(10)->create();
 
     }
 }
