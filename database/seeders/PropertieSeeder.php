@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Propertie;
 
-class InmuebleSeeder extends Seeder
+class PropertieSeeder extends Seeder
 {
     /**
      * Run the database seeds.

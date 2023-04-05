@@ -9,7 +9,7 @@ use App\Models\Propertie;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class InmuebleFactory extends Factory
+class PropertieFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -22,10 +22,15 @@ class InmuebleFactory extends Factory
             //
             'nombre' => fake()->name(),
             'descripcion' => fake()->name(),
-            'precio_noche' => fake()->name(),
+            'imagenes' => fake()->name(),
+            'precio_noche' => 500.99,
             'informacion' => fake()->name(),
             'reglas_propiedad' => fake()->name(),
-
+            'seguridad_propiedad' => fake()->name(),
+            'politicas_cancelacion' => fake()->name(),
+            'province_id' =>1,
+            'district_id' =>1,
+            'estado' =>false,
         ];
     }
 }
