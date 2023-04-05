@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Propertie;
+use App\Models\Booking;
 
 class PropertieSeeder extends Seeder
 {
@@ -18,5 +19,6 @@ class PropertieSeeder extends Seeder
         //
 
         Propertie::factory()->count(10)->create();
+
     }
 }

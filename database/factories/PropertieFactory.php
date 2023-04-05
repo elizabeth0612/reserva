@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Propertie;
+use App\Model\Propertie;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
@@ -23,14 +23,16 @@ class PropertieFactory extends Factory
             'nombre' => fake()->name(),
             'descripcion' => fake()->name(),
             'imagenes' => fake()->name(),
-            'precio_noche' => 500.99,
+            'precio_noche' => 59.55,
             'informacion' => fake()->name(),
             'reglas_propiedad' => fake()->name(),
             'seguridad_propiedad' => fake()->name(),
             'politicas_cancelacion' => fake()->name(),
-            'province_id' =>1,
-            'district_id' =>1,
-            'estado' =>false,
+            'province_id' => 1,
+            'district_id' => 1,
+            'estado' => 1,
+
         ];
     }
+
 }

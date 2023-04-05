@@ -7,8 +7,11 @@ use App\Models\User;
 use App\Models\Propertie;
 use App\Models\District;
 use App\Models\Province;
-
-
+use App\Models\Coupon;
+use App\Models\TypePayment;
+use App\Models\DocumentTypes;
+use App\Models\CardType;
+use App\Models\Booking;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,24 +24,42 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
 
-        Province::create([
-            'nombre' => 'Cuzco',
-       ]);
+        Coupon::create([
+            'descuento' => 50.49,
+            'estado' => false,
+        ]);
 
-       District::create([
+        Province::create([
+            'nombre' => 'Arequipa',
+        ]);
+
+        District::create([
            'nombre' => 'Comas',
-       ]);
+        ]);
+
+        TypePayment::create([
+            'nombre' => 'Tajeta',
+        ]);
+
+        DocumentTypes::create([
+            'nombre' => 'DNI',
+        ]);
+
+       CardType::create([
+           'nombre' => 'Visa',
+        ]);
+
 
 
         $this->call(PropertieSeeder::class);
 
-         User::factory()->create([
+        User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@material.com',
             'password' => ('secret')
         ])->assignRole('administrador');
 
-        
+
 
         Propertie::factory()->create([
             'nombre' => 'juan',
@@ -51,7 +72,20 @@ class DatabaseSeeder extends Seeder
             'politicas_cancelacion' => 'admin@material.com',
             'province_id' => 1,
             'district_id' => 1,
-            'estado' =>1,
+            'estado' => 1,
+        ]);
+
+        Booking::factory()->create([
+            'precio' => 2500,
+            'huespedes' => 3,
+            'cantidad_dias' => 5,
+            'fecha_entrada' => '2023-04-06',
+            'fecha_salida' => '2023-04-11',
+            'fecha_registro' => '2023-04-05',
+            'estado' => false,
+            'user_id' => 1,
+            'coupon_id' => 1,
+            'propertie_id' => 1
         ]);
 
         User::factory()->create([
@@ -61,6 +95,5 @@ class DatabaseSeeder extends Seeder
         ])->assignRole('gerente');
 
         User::factory()->count(10)->create();
-
     }
 }
