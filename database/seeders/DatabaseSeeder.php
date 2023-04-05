@@ -20,6 +20,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(RoleSeeder::class);
+
+        Province::create([
+            'nombre' => 'Cuzco',
+       ]);
+
+       District::create([
+           'nombre' => 'Comas',
+       ]);
+
+
         $this->call(PropertieSeeder::class);
 
          User::factory()->create([
@@ -28,13 +38,7 @@ class DatabaseSeeder extends Seeder
             'password' => ('secret')
         ])->assignRole('administrador');
 
-        Province::factory()->create([
-             'nombre' => 'Cuzco',
-        ]);
-
-        District::factory()->create([
-            'nombre' => 'Comas',
-        ]);
+        
 
         Propertie::factory()->create([
             'nombre' => 'juan',
