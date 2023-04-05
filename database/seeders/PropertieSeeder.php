@@ -19,6 +19,7 @@ class PropertieSeeder extends Seeder
         //
 
         Propertie::factory()->count(10)->create();
+        Booking::factory()->count(10)->create();
 
     }
 }

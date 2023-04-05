@@ -24,6 +24,18 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
 
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@material.com',
+            'password' => ('secret')
+        ])->assignRole('administrador');
+
+        User::factory()->create([
+            'name' => 'Gerente',
+            'email' => 'gerente@material.com',
+            'password' => ('secret'),
+        ])->assignRole('gerente');
+
         Coupon::create([
             'descuento' => 50.49,
             'estado' => false,
@@ -50,14 +62,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-
+        User::factory()->count(10)->create();
         $this->call(PropertieSeeder::class);
 
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@material.com',
-            'password' => ('secret')
-        ])->assignRole('administrador');
+
 
 
 
@@ -88,12 +96,8 @@ class DatabaseSeeder extends Seeder
             'propertie_id' => 1
         ]);
 
-        User::factory()->create([
-            'name' => 'Gerente',
-            'email' => 'gerente@material.com',
-            'password' => ('secret'),
-        ])->assignRole('gerente');
 
-        User::factory()->count(10)->create();
+
+
     }
 }
