@@ -38,11 +38,6 @@ class DatabaseSeeder extends Seeder
             'password' => ('secret'),
         ])->assignRole('gerente');
 
-        Coupon::create([
-            'descuento' => 50.49,
-            'estado' => false,
-        ]);
-
         Province::create([
             'nombre' => 'Arequipa',
         ]);
@@ -64,53 +59,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+
+
         User::factory()->count(10)->create();
         $this->call(PropertieSeeder::class);
-
-
-
-
-
-        Propertie::factory()->create([
-            'nombre' => 'juan',
-            'descripcion' => 'juan@material.com',
-            'imagenes' => 'muygrande',
-            'precio_noche' => 100.99,
-            'informacion' => 'admin@material.com',
-            'reglas_propiedad' => 'admin@material.com',
-            'seguridad_propiedad' => 'admin@material.com',
-            'politicas_cancelacion' => 'admin@material.com',
-            'province_id' => 1,
-            'district_id' => 1,
-            'estado' => 1,
-        ]);
-
-        Booking::factory()->create([
-            'precio' => 2500,
-            'huespedes' => 3,
-            'cantidad_dias' => 5,
-            'fecha_entrada' => '2023-04-06',
-            'fecha_salida' => '2023-04-11',
-            'fecha_registro' => '2023-04-05',
-            'estado' => false,
-            'user_id' => 1,
-            'coupon_id' => 1,
-            'propertie_id' => 1
-        ]);
-
-        PaymentReservation::factory()->create([
-            'booking_id' => 2,
-            'type_payment_id' => 1,
-            'numero_celular' => '987456123',
-            'document_type_id' => 1,
-            'numero_documento' => '72844014',
-            'numero_tarjeta' => '784563219874512354',
-            'card_type_id' => 1,
-            'pago_costo' => 300.01,
-        ]);
-
-
-
+        $this->call(CouponSeeder::class);
+        $this->call(BookingSeeder::class);
+        $this->call(PaymentReservationSeeder::class);
 
     }
 }

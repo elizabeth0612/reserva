@@ -4,10 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Propertie;
-use App\Models\PaymentReservation;
+use App\Models\Coupon;
 
-class PropertieSeeder extends Seeder
+class CouponSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,6 +16,6 @@ class PropertieSeeder extends Seeder
     public function run()
     {
         //
-        Propertie::factory()->count(10)->create();
+        Coupon::factory()->count(10)->create();
     }
 }

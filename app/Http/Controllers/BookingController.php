@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 
-class ReservaController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.

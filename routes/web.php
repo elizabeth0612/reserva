@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\InmuebleController;
@@ -86,8 +86,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/ver-clientes', [ClienteController::class, 'index'])->name('clientes');
 
-Route::get('/reservas-pendientes', [ReservaController::class, 'index'])->name('pendientes');
-Route::get('/reservas-realizadas', [ReservaController::class, 'realizadas'])->name('realizadas');
+Route::get('/reservas-pendientes', [BookingController::class, 'index'])->name('pendientes');
+Route::get('/reservas-realizadas', [BookingController::class, 'realizadas'])->name('realizadas');
 
 Route::get('/informes-anuales', [InformeController::class, 'index'])->name('anuales');
 Route::get('/informes-mensuales', [InformeController::class, 'informe'])->name('mensuales');

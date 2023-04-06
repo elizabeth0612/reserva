@@ -4,10 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Propertie;
-use App\Models\PaymentReservation;
+use App\Models\Booking;
 
-class PropertieSeeder extends Seeder
+class BookingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,6 +16,6 @@ class PropertieSeeder extends Seeder
     public function run()
     {
         //
-        Propertie::factory()->count(10)->create();
+        Booking::factory()->count(10)->create();
     }
 }

@@ -21,15 +21,15 @@ class BookingFactory extends Factory
         return [
             //
             'precio' => 500,
-            'huespedes' => 3,
-            'cantidad_dias' => 4,
+            'huespedes' =>fake()->numberBetween(1, 5),
+            'cantidad_dias' =>fake()->numberBetween(1, 7),
             'fecha_entrada' => '2023-05-10',
             'fecha_salida' => '2023-05-14',
             'fecha_registro' => '2023-05-08',
             'estado' => false,
-            'user_id' => 1,
-            'coupon_id' => 1,
-            'propertie_id' => 1,
+            'user_id' =>fake()->numberBetween(1, 10),
+            'coupon_id' =>fake()->numberBetween(1, 10),
+            'propertie_id' =>fake()->numberBetween(1, 10),
         ];
     }
 }
