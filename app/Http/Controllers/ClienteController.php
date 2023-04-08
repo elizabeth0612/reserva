@@ -52,14 +52,17 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::updateOrCreate(['id' => $request->id],
+        ['name' => $request->name, 'about' => $request->about]);        
+
+        return response()->json(['success'=>'Post saved successfully.']);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\ResponseMaegan Bartoletti
      */
     public function show($id)
     {
@@ -74,7 +77,9 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $cliente = User::find($id);
+        return response()->json($cliente);
     }
 
     /**
@@ -97,6 +102,8 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+     
+        return response()->json(['success'=>'Post deleted successfully.']);
     }
 }

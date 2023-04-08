@@ -15,9 +15,9 @@
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
             
-                            <div class="container">
+                            <div class="container-sm">
                                 <h1>Laravel 9 AJAX CRUD Operation Example - Techsolutionstuff</h1>
-                                <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Add New Post</a>
+                                <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Cliente</a>
                                 <table class="table table-bordered data-table">
                                     <thead>
                                         <tr>
@@ -56,7 +56,7 @@
                                                     </div>
                                     
                                                     <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-primary" id="savedata" value="create">Save Post
+                                                    <button type="submit" class="btn btn-primary" id="savedata" value="create">Guardar
                                                     </button>
                                                     </div>
                                                 </form>
@@ -98,6 +98,64 @@
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
+    $('#createNewPost').click(function () {
+        $('#savedata').val("create-post");
+        $('#id').val('');
+        $('#postForm').trigger("reset");
+        $('#modelHeading').html("Create New Post");
+        $('#ajaxModelexa').modal('show');
+    });
+    $('body').on('click', '.editPost', function () {
+      var id = $(this).data('id');
+      $.get("{{ route('clientes.index') }}" +'/' + id +'/edit', function (data) {
+          $('#modelHeading').html("Edit Post");
+          $('#savedata').val("edit-user");
+          $('#ajaxModelexa').modal('show');
+          $('#id').val(data.id);
+          $('#name').val(data.name);
+          $('#about').val(data.about);
+      })
+   });
+   $('#savedata').click(function (e) {
+        e.preventDefault();
+        $(this).html('Sending..');
+    
+        $.ajax({
+          data: $('#postForm').serialize(),
+          url: "{{ route('clientes.store') }}",
+          type: "POST",
+          dataType: 'json',
+          success: function (data) {
+     
+              $('#postForm').trigger("reset");
+              $('#ajaxModelexa').modal('hide');
+              table.draw();
+         
+          },
+          error: function (data) {
+              console.log('Error:', data);
+              $('#savedata').html('Save Changes');
+          }
+      });
+    });
+    
+    $('body').on('click', '.deletePost', function () {
+     
+        var id = $(this).data("id");
+        confirm("Are You sure want to delete this Post!");
+      
+        $.ajax({
+            type: "DELETE",
+            url: "{{ route('clientes.store') }}"+'/'+id,
+            success: function (data) {
+                table.draw();
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        });
+    });
+    
 });
 
 </script>
