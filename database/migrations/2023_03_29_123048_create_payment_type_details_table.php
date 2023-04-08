@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('document_types', function (Blueprint $table) {
+        Schema::create('payment_type_details', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('imagen');
+            $table->foreignId('type_payment_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('document_types');
+        Schema::dropIfExists('payment_type_details');
     }
 };

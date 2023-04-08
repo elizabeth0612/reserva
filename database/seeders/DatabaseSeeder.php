@@ -9,10 +9,8 @@ use App\Models\District;
 use App\Models\Province;
 use App\Models\Coupon;
 use App\Models\TypePayment;
-use App\Models\DocumentTypes;
-use App\Models\CardType;
 use App\Models\Booking;
-use App\Models\PaymentReservation;
+use App\Models\PaymentTypeDetail;
 
 
 class DatabaseSeeder extends Seeder
@@ -39,33 +37,33 @@ class DatabaseSeeder extends Seeder
         ])->assignRole('gerente');
 
         Province::create([
-            'nombre' => 'Arequipa',
+            'nombre' => 'lima',
         ]);
 
         District::create([
            'nombre' => 'Comas',
+           'province_id' => 1,
         ]);
 
         TypePayment::create([
             'nombre' => 'Tajeta',
         ]);
 
-        DocumentTypes::create([
-            'nombre' => 'DNI',
+        TypePayment::create([
+            'nombre' => 'billetera',
         ]);
 
-       CardType::create([
-           'nombre' => 'Visa',
+        PaymentTypeDetail::create([
+            'nombre' => 'yape',
+            'imagen' => 'yape.pnj',
+            'type_payment_id' => 1,
         ]);
-
-
 
 
         User::factory()->count(10)->create();
         $this->call(PropertieSeeder::class);
         $this->call(CouponSeeder::class);
         $this->call(BookingSeeder::class);
-        $this->call(PaymentReservationSeeder::class);
 
     }
 }

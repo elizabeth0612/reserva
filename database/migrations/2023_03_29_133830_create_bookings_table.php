@@ -21,10 +21,12 @@ return new class extends Migration
             $table->date('fecha_entrada');
             $table->date('fecha_salida');
             $table->date('fecha_registro');
+            $table->double('pago_costo');
             $table->boolean('estado');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('coupon_id')->constrained()->onDelete('cascade');
             $table->foreignId('propertie_id')->constrained()->onDelete('cascade');
+            $table->foreignId('type_payment_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

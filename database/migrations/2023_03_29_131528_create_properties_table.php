@@ -23,9 +23,8 @@ return new class extends Migration
             $table->string('reglas_propiedad');
             $table->string('seguridad_propiedad');
             $table->string('politicas_cancelacion');
-            $table->foreignId('province_id')->constrained()->onDelete('cascade');
-            $table->foreignId('district_id')->constrained()->onDelete('cascade');
             $table->boolean('estado');
+            $table->foreignId('district_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
