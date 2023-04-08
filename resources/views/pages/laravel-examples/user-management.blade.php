@@ -102,7 +102,7 @@
         $('#savedata').val("create-post");
         $('#id').val('');
         $('#postForm').trigger("reset");
-        $('#modelHeading').html("Create New Post");
+        $('#modelHeading').html("Agregando un Cliente");
         $('#ajaxModelexa').modal('show');
     });
     $('body').on('click', '.editPost', function () {

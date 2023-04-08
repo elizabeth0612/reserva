@@ -37,6 +37,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 
 Route::resource('clientes', ClienteController::class);
+Route::resource('cupon', CuponController::class);
+
 
 
 Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
@@ -101,8 +103,7 @@ Route::get('/inmueble-inmueble', [InmuebleController::class, 'index'])->name('in
 
 Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
 
-Route::get('/cupon-cupon_consumidos', [CuponController::class, 'index'])->name('cupon_consumidos');
-Route::get('/cupon-cupon_vigentes', [CuponController::class, 'vigentes'])->name('cupon_vigentes');
+Route::get('/cupon-consumidos', [CuponController::class,'consumidos'])->name('consumidos'); // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR CUPON
 
 Route::get('/admi-administradores', [AdmiController::class, 'administradores'])->name('administradores');
 

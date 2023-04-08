@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Coupon;
-
+use DataTables;
 class CuponController extends Controller
 {
     /**
@@ -12,18 +12,48 @@ class CuponController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $cupones=Coupon::where('estado',1)->get();
-        return view('cupon.cupon_consumidos',compact('cupones') );
+        // vigentes
+        if ($request->ajax()) {
+            $cupones=Coupon::where('estado',1)->get();
+            return Datatables::of($cupones)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+   
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+   
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+    
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+      
+        return view('cupon.cupon_vigentes');
     }
 
-    public function vigentes()
+    public function consumidos(Request $request)
     {
-        //
-        $cupones=Coupon::where('estado',0)->get();
-        return view('cupon.cupon_vigentes',compact('cupones') );
+        //vigentes
+        if ($request->ajax()) {
+            $cupones=Coupon::where('estado',0)->get();
+            return Datatables::of($cupones)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+   
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+   
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+    
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+      
+        return view('cupon.cupon_consumidos');
     }
 
     /**
@@ -44,7 +74,10 @@ class CuponController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Coupon::updateOrCreate(['id' => $request->id],
+        ['descuento' => $request->descuento,'estado' =>1]);        
+
+        return response()->json(['success'=>'Post saved successfully.']);
     }
 
     /**
@@ -66,7 +99,8 @@ class CuponController extends Controller
      */
     public function edit($id)
     {
-        //
+        $coupon = Coupon::find($id);
+        return response()->json($coupon);
     }
 
     /**
@@ -89,6 +123,8 @@ class CuponController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Coupon::find($id)->delete();
+     
+        return response()->json(['success'=>'Post deleted successfully.']);
     }
 }
