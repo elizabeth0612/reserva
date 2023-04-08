@@ -36,6 +36,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 
+Route::resource('clientes', ClienteController::class);
+
+
 Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
@@ -84,7 +87,9 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('user-profile');
 });
 
-Route::get('/ver-clientes', [ClienteController::class, 'index'])->name('clientes');
+
+
+
 
 Route::get('/reservas-pendientes', [BookingController::class, 'index'])->name('pendientes');
 Route::get('/reservas-realizadas', [BookingController::class, 'realizadas'])->name('realizadas');
