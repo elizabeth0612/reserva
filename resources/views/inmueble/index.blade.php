@@ -184,7 +184,7 @@
                 $('#reglas_propiedad').val(data.reglas_propiedad);
                 $('#seguridad_propiedad').val(data.seguridad_propiedad);
                 $('#politicas_cancelacion').val(data.politicas_cancelacion);
-                $('#district_id').val(data.district_id);
+                $('#district_id').val(data.district.nombre);
             })
         });
         $('#savedata').click(function(e) {

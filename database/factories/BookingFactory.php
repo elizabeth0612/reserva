@@ -27,7 +27,7 @@ class BookingFactory extends Factory
             'fecha_salida' => '2023-05-14',
             'fecha_registro' => '2023-05-08',
             'pago_costo' => 20.99,
-            'estado' => false,
+            'estado' => fake()->numberBetween(0, 1),
             'user_id' =>fake()->numberBetween(1, 10),
             'type_payment_id' =>fake()->numberBetween(1, 2),
             'coupon_id' =>fake()->numberBetween(1, 10),

@@ -19,8 +19,8 @@ class InmuebleController extends Controller
         //
     if ($request->ajax()) {
         $inmuebles=Propertie::where('estado',1)->get();
-        $districts=Propertie::with('district')->get();
-        return Datatables::of($inmuebles,$districts)
+
+        return Datatables::of($inmuebles)
                 ->addIndexColumn()
 
                 ->addColumn('action', function($row){
