@@ -42,6 +42,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="modelHeading"></h4>
+                        <button type="button" class="btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     </div>
                     <div class="modal-body">
                         <form id="postForm" name="postForm" class="form-horizontal">
