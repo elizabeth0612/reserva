@@ -170,7 +170,7 @@
             {data: 'fecha_salida', name: 'fecha_salida'},
             {data: 'fecha_registro', name: 'fecha_registro'},
             {data: 'pago_costo', name: 'pago_costo'},
-            {data: 'user_id', name: 'user_id'},
+            {data: 'user.name', name: 'user.name'},
             {data: 'coupon_id', name: 'coupon_id'},
             {data: 'propertie_id', name: 'propertie_id'},
             {data: 'type_payment_id', name: 'type_payment_id'},

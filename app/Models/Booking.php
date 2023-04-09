@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\User;
 class Booking extends Model
 {
+    protected $with = ['user'];
     use HasFactory;
     protected $fillable = [
         'precio',
@@ -22,4 +24,9 @@ class Booking extends Model
         'propertie_id',
         'type_payment_id'
     ];
+
+    public function user():BelongsTo{
+        return $this->belongsTo(User::class);
+    }
+
 }
