@@ -172,8 +172,8 @@
             {data: 'pago_costo', name: 'pago_costo'},
             {data: 'user.name', name: 'user.name'},
             {data: 'coupon_id', name: 'coupon_id'},
-            {data: 'propertie_id', name: 'propertie_id'},
-            {data: 'type_payment_id', name: 'type_payment_id'},
+            {data: 'propertie.nombre', name: 'propertie.nombre'},
+            {data: 'type_payment.nombre', name: 'type_payment.nombre'},
         ]
     });
 
