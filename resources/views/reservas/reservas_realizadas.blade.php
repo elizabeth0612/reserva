@@ -17,7 +17,7 @@
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
         <div class="container-sm">
-            <h1>Lista de Reservas Realizadas</h1>
+            <h1>Lista de Reservas - Realizadas</h1>
 
             <table class="table table-bordered data-table">
                 <thead>
@@ -32,7 +32,7 @@
                         <th>Pago Costo</th>
                         <th>Cliente</th>
                         <th>Cupon </th>
-                        <th>Propiedad  </th>
+                        <th>Propiedad </th>
                         <th>Tipo de pago</th>
                     </tr>
                 </thead>
@@ -52,7 +52,7 @@
 
                             <input type="hidden" name="id" id="id">
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">precio</label>
+                                <label for="name" class="col-sm-2 control-label">Precio</label>
                                 <div class="col-sm-12">
                                     <input type="double" class="form-control" id="precio" name="precio"
                                         placeholder="Enter Name" value="" required>
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">cantidad_dias</label>
+                                <label for="name" class="col-sm-2 control-label">Cantidad_Dias</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="cantidad_dias" name="cantidad_dias"
                                         placeholder="Enter Name" value="" required>
@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">fecha_entrada</label>
+                                <label for="name" class="col-sm-2 control-label">Fecha_Entrada</label>
                                 <div class="col-sm-12">
                                     <input type="date" class="form-control" id="fecha_entrada" name="fecha_entrada"
                                         placeholder="Enter Name" value="" required>
@@ -84,7 +84,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">fecha_salida</label>
+                                <label for="name" class="col-sm-2 control-label">Fecha_Salida</label>
                                 <div class="col-sm-12">
                                     <input type="date" class="form-control" id="fecha_salida" name="fecha_salida"
                                         placeholder="Enter Name" value="" required>
@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">fecha_registro</label>
+                                <label for="name" class="col-sm-2 control-label">Fecha_Registro</label>
                                 <div class="col-sm-12">
                                     <input type="date" class="form-control" id="fecha_registro" name="fecha_registro"
                                         placeholder="Enter Name" value="" required>
@@ -100,7 +100,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">pago_costo</label>
+                                <label for="name" class="col-sm-2 control-label">Pago_Costo</label>
                                 <div class="col-sm-12">
                                     <input type="double" class="form-control" id="pago_costo" name="pago_costo"
                                         placeholder="Enter Name" value="" required>
@@ -108,7 +108,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">user_id</label>
+                                <label for="name" class="col-sm-2 control-label">User_id</label>
                                 <div class="col-sm-12">
                                     <input type="number" class="form-control" id="user_id" name="user_id"
                                         placeholder="Enter Name" value="" required>
@@ -116,7 +116,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">coupon_id</label>
+                                <label for="name" class="col-sm-2 control-label">Coupon_id</label>
                                 <div class="col-sm-12">
                                     <input type="number" class="form-control" id="coupon_id" name="coupon_id"
                                         placeholder="Enter Name" value="" required>
@@ -124,7 +124,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">propertie_id</label>
+                                <label for="name" class="col-sm-2 control-label">Propertie_id</label>
                                 <div class="col-sm-12">
                                     <input type="number" class="form-control" id="propertie_id" name="propertie_id"
                                         placeholder="Enter Name" value="" required>
@@ -132,14 +132,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">type_payment_id</label>
+                                <label for="name" class="col-sm-2 control-label">Type_Payment_id</label>
                                 <div class="col-sm-12">
-                                    <input type="number" class="form-control" id="type_payment_id" name="type_payment_id"
-                                        placeholder="Enter Name" value="" required>
+                                    <input type="number" class="form-control" id="type_payment_id"
+                                        name="type_payment_id" placeholder="Enter Name" value="" required>
                                 </div>
                             </div>
-
-
                         </form>
                     </div>
                 </div>
@@ -159,24 +157,24 @@
         });
 
         var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('realizadas') }}",
-        columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'precio', name: 'precio'},
-            {data: 'huespedes', name: 'huespedes'},
-            {data: 'cantidad_dias', name: 'cantidad_dias'},
-            {data: 'fecha_entrada', name: 'fecha_entrada'},
-            {data: 'fecha_salida', name: 'fecha_salida'},
-            {data: 'fecha_registro', name: 'fecha_registro'},
-            {data: 'pago_costo', name: 'pago_costo'},
-            {data: 'user.name', name: 'user.name'},
-            {data: 'coupon_id', name: 'coupon_id'},
-            {data: 'propertie.nombre', name: 'propertie.nombre'},
-            {data: 'type_payment.nombre', name: 'type_payment.nombre'},
-        ]
-    });
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('realizadas') }}",
+            columns: [
+                {data: 'DT_RowIndex',name: 'DT_RowIndex'},
+                {data: 'precio',name: 'precio'},
+                {data: 'huespedes',name: 'huespedes'},
+                {data: 'cantidad_dias',name: 'cantidad_dias'},
+                {data: 'fecha_entrada',name: 'fecha_entrada'},
+                {data: 'fecha_salida',name: 'fecha_salida'},
+                {data: 'fecha_registro',name: 'fecha_registro'},
+                {data: 'pago_costo',name: 'pago_costo'},
+                {data: 'user.name',name: 'user.name'},
+                {data: 'coupon_id',name: 'coupon_id'},
+                {data: 'propertie.nombre',name: 'propertie.nombre'},
+                {data: 'type_payment.nombre',name: 'type_payment.nombre'},
+            ]
+        });
 
         $('#createNewPost').click(function() {
             $('#savedata').val("create-post");

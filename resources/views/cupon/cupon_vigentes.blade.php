@@ -16,13 +16,13 @@
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
         <div class="container-sm">
-            <h1>Laravel 9 AJAX CRUD Operation Example - Techsolutionstuff</h1>
-            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Cliente</a>
+            <h1>Lista de Cupones - Vigentes</h1>
+            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Cupon</a>
             <table class="table table-bordered data-table">
                 <thead>
                     <tr>
-                        <th>codigo</th>
-                        <th>descuento</th>
+                        <th>Codigo</th>
+                        <th>Descuento</th>
                         <th width="280px">Action</th>
                     </tr>
                 </thead>
@@ -41,7 +41,7 @@
                         <form id="postForm" name="postForm" class="form-horizontal">
                             <input type="hidden" name="id" id="id">
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">descuento</label>
+                                <label for="name" class="col-sm-2 control-label">Descuento</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="descuento" name="descuento"
                                         placeholder="Enter Name" value="" required>
@@ -55,16 +55,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        </tbody>
-        </table>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        <x-footers.auth></x-footers.auth>
         </div>
     </main>
     <x-plugins></x-plugins>
@@ -80,15 +70,25 @@
         });
 
         var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('cupon.index') }}",
-        columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'descuento', name: 'descuento'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('cupon.index') }}",
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                },
+                {
+                    data: 'descuento',
+                    name: 'descuento'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false
+                },
+            ]
+        });
 
         $('#createNewPost').click(function() {
             $('#savedata').val("create-post");
@@ -146,6 +146,5 @@
                 }
             });
         });
-
     });
 </script>

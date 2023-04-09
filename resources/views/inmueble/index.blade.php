@@ -16,20 +16,20 @@
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
         <div class="container-sm">
-            <h1>Lista de inmuebles</h1>
-            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Reservas</a>
+            <h1>Lista de Inmuebles</h1>
+            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Inmueble</a>
             <table class="table table-bordered data-table">
                 <thead>
                     <tr>
-                        <th>codigo</th>
-                        <th>nombre</th>
-                        <th>descripcion</th>
-                        <th>imagenes</th>
-                        <th>precio_noche</th>
-                        <th>informacion</th>
-                        <th>reglas_propiedad</th>
-                        <th>seguridad_propiedad</th>
-                        <th>politicas_cancelacion </th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Imagenes</th>
+                        <th>Precio_Noche</th>
+                        <th>Informacion</th>
+                        <th>Reglas_Propiedad</th>
+                        <th>Seguridad_Propiedad</th>
+                        <th>Politicas_Cancelacion </th>
                         <th>Distrito</th>
                         <th width="280px">Action</th>
                     </tr>
@@ -42,7 +42,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="modelHeading"></h4>
-                        <button type="button" class="btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close-black" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
 
                     </div>
                     <div class="modal-body">
@@ -50,7 +51,7 @@
 
                             <input type="hidden" name="id" id="id">
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">nombre</label>
+                                <label for="name" class="col-sm-2 control-label">Nombre</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="nombre" name="nombre"
                                         placeholder="Enter Name" value="" required>
@@ -58,7 +59,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">descripcion</label>
+                                <label for="name" class="col-sm-2 control-label">Descripcion</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="descripcion" name="descripcion"
                                         placeholder="Enter Name" value="" required>
@@ -66,7 +67,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">imagenes</label>
+                                <label for="name" class="col-sm-2 control-label">Imagenes</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="imagenes" name="imagenes"
                                         placeholder="Enter Name" value="" required>
@@ -74,7 +75,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">precio_noche</label>
+                                <label for="name" class="col-sm-2 control-label">Precio_Noche</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="precio_noche" name="precio_noche"
                                         placeholder="Enter Name" value="" required>
@@ -82,7 +83,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">informacion</label>
+                                <label for="name" class="col-sm-2 control-label">Informacion</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="informacion" name="informacion"
                                         placeholder="Enter Name" value="" required>
@@ -90,26 +91,27 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">reglas_propiedad</label>
+                                <label for="name" class="col-sm-2 control-label">Reglas_Propiedad</label>
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="reglas_propiedad" name="reglas_propiedad"
-                                        placeholder="Enter Name" value="" required>
+                                    <input type="text" class="form-control" id="reglas_propiedad"
+                                        name="reglas_propiedad" placeholder="Enter Name" value="" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">seguridad_propiedad</label>
+                                <label for="name" class="col-sm-2 control-label">Seguridad_Propiedad</label>
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="seguridad_propiedad" name="seguridad_propiedad"
-                                        placeholder="Enter Name" value="" required>
+                                    <input type="text" class="form-control" id="seguridad_propiedad"
+                                        name="seguridad_propiedad" placeholder="Enter Name" value="" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">politicas_cancelacion</label>
+                                <label for="name" class="col-sm-2 control-label">Politicas_Cancelacion</label>
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="politicas_cancelacion" name="politicas_cancelacion"
-                                        placeholder="Enter Name" value="" required>
+                                    <input type="text" class="form-control" id="politicas_cancelacion"
+                                        name="politicas_cancelacion" placeholder="Enter Name" value=""
+                                        required>
                                 </div>
                             </div>
 
@@ -144,23 +146,23 @@
         });
 
         var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('inmueble.index') }}",
-        columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'nombre', name: 'nombre'},
-            {data: 'descripcion', name: 'descripcion'},
-            {data: 'imagenes', name: 'imagenes'},
-            {data: 'precio_noche', name: 'precio_noche'},
-            {data: 'informacion', name: 'informacion'},
-            {data: 'reglas_propiedad', name: 'reglas_propiedad'},
-            {data: 'seguridad_propiedad', name: 'seguridad_propiedad'},
-            {data: 'politicas_cancelacion', name: 'politicas_cancelacion'},
-            {data: 'district.nombre' ,name: 'district.nombre'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('inmueble.index') }}",
+            columns: [
+                {data: 'DT_RowIndex',name: 'DT_RowIndex'},
+                {data: 'nombre',name: 'nombre'},
+                {data: 'descripcion',name: 'descripcion'},
+                {data: 'imagenes',name: 'imagenes'},
+                {data: 'precio_noche',name: 'precio_noche'},
+                {data: 'informacion',name: 'informacion'},
+                {data: 'reglas_propiedad',name: 'reglas_propiedad'},
+                {data: 'seguridad_propiedad',name: 'seguridad_propiedad'},
+                {data: 'politicas_cancelacion',name: 'politicas_cancelacion'},
+                {data: 'district.nombre',name: 'district.nombre'},
+                {data: 'action',name: 'action',orderable: false,searchable: false},
+            ]
+        });
 
         $('#createNewPost').click(function() {
             $('#savedata').val("create-post");

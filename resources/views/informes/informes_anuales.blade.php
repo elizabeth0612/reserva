@@ -6,6 +6,7 @@
         <x-navbars.navs.auth titlePage="User Management"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
+            <h1>Informacion Anuales</h1>
             <div class="row">
                 <div class="col-12">
                     <div class="card my-4">

@@ -17,17 +17,15 @@
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
         <div class="container-sm">
-            <h1>Lista de Cupones</h1>
+            <h1>Lista de Cupones - Consumidos</h1>
             <table class="table table-bordered data-table">
                 <thead>
                     <tr>
-                        <th>codigo</th>
-                        <th>descuento</th>
+                        <th>Codigo</th>
+                        <th>Descuento</th>
                     </tr>
                 </thead>
             </table>
-        </div>
-        <x-footers.auth></x-footers.auth>
         </div>
     </main>
     <x-plugins></x-plugins>
@@ -45,14 +43,9 @@
             processing: true,
             serverSide: true,
             ajax: "{{ route('consumidos') }}",
-            columns: [{
-                    data: 'DT_RowIndex',
-                    name: 'DT_RowIndex'
-                },
-                {
-                    data: 'descuento',
-                    name: 'descuento'
-                },
+            columns: [
+                {data: 'DT_RowIndex',name: 'DT_RowIndex'},
+                {data: 'descuento',name: 'descuento'},
             ]
         });
     });
