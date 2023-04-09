@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\User;
 use App\Models\Propertie;
+use App\Models\TypePayment;
+
 
 class Booking extends Model
 {
-    protected $with = ['user','propertie'];
+    protected $with = ['user','propertie','type_payment'];
 
     use HasFactory;
     protected $fillable = [
@@ -36,6 +38,11 @@ class Booking extends Model
     public function propertie():BelongsTo
     {
         return $this->belongsTo(Propertie::class);
+    }
+
+    public function type_payment():BelongsTo
+    {
+        return $this->belongsTo(TypePayment::class);
     }
 
 }
