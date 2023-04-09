@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use DataTables;
 
 class AdmiController extends Controller
 {
@@ -11,16 +13,26 @@ class AdmiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        return view ('admi.admi');
-    }
 
-    public function administradores()
+    public function index(Request $request)
     {
-        //
-        return view ('administradores.administradores');
+        if ($request->ajax()) {
+            $admin =User::where('role',1)->get();
+            return Datatables::of($admin)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('administradores.administradores');
     }
 
     /**
@@ -41,7 +53,12 @@ class AdmiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::updateOrCreate(['id' => $request->id],
+        ['name' => $request->name, 'about' => $request->about,
+        'phone' => $request->phone, 'location' => $request->location,
+        'email' => $request->email]);
+
+        return response()->json(['success'=>'Post saved successfully.']);
     }
 
     /**
@@ -63,7 +80,9 @@ class AdmiController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $admin = User::find($id);
+        return response()->json($admin);
     }
 
     /**
@@ -86,6 +105,7 @@ class AdmiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return response()->json(['success'=>'Post deleted successfully.']);
     }
 }

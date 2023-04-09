@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use DataTables;
 
 class BookingController extends Controller
 {
@@ -12,18 +13,48 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $reservas=Booking::where('estado',0)->get();
-        return view('reservas.reservas_pendientes',compact('reservas') );
+        if ($request->ajax()) {
+            $reservas=Booking::where('estado',1)->get();
+            return Datatables::of($reservas)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('reservas.reservas_pendientes');
     }
 
-    public function realizadas()
+    public function realizadas(Request $request)
     {
         //
-        $reservas=Booking::where('estado',1)->get();
-        return view('reservas.reservas_realizadas',compact('reservas') );
+        if ($request->ajax()) {
+            $reservas=Booking::where('estado',0)->get();
+            return Datatables::of($reservas)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('reservas.reservas_realizadas');
     }
 
     /**
@@ -44,7 +75,16 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Booking::updateOrCreate(['id' => $request->id],
+        ['precio' => $request->precio, 'huespedes' => $request->huespedes,
+        'cantidad_dias' => $request->cantidad_dias, 'fecha_entrada' => $request->fecha_entrada,
+        'fecha_salida' => $request->fecha_salida,'fecha_registro' => $request->fecha_registro,
+        'pago_costo' => $request->pago_costo, 'user_id' => $request->user_id,
+        'coupon_id' => $request->coupon_id,'propertie_id' => $request->propertie_id,
+        'type_payment_id' => $request->type_payment_id
+    ]);
+
+        return response()->json(['success'=>'Post saved successfully.']);
     }
 
     /**
@@ -66,7 +106,8 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reservas = Booking::find($id);
+        return response()->json($reservas);
     }
 
     /**
@@ -89,6 +130,7 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Booking::find($id)->delete();
+        return response()->json(['success'=>'Post deleted successfully.']);
     }
 }

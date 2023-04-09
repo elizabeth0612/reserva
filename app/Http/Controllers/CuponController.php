@@ -20,17 +20,17 @@ class CuponController extends Controller
             return Datatables::of($cupones)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-   
+
                            $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
-   
+
                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
-    
+
                             return $btn;
                     })
                     ->rawColumns(['action'])
                     ->make(true);
         }
-      
+
         return view('cupon.cupon_vigentes');
     }
 
@@ -42,17 +42,17 @@ class CuponController extends Controller
             return Datatables::of($cupones)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-   
+
                            $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
-   
+
                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
-    
+
                             return $btn;
                     })
                     ->rawColumns(['action'])
                     ->make(true);
         }
-      
+
         return view('cupon.cupon_consumidos');
     }
 
@@ -75,7 +75,7 @@ class CuponController extends Controller
     public function store(Request $request)
     {
         Coupon::updateOrCreate(['id' => $request->id],
-        ['descuento' => $request->descuento,'estado' =>1]);        
+        ['descuento' => $request->descuento]);
 
         return response()->json(['success'=>'Post saved successfully.']);
     }
@@ -124,7 +124,7 @@ class CuponController extends Controller
     public function destroy($id)
     {
         Coupon::find($id)->delete();
-     
+
         return response()->json(['success'=>'Post deleted successfully.']);
     }
 }

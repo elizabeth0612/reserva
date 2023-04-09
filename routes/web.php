@@ -38,6 +38,10 @@ use App\Http\Controllers\SessionsController;
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('cupon', CuponController::class);
+Route::resource('booking', BookingController::class);
+Route::resource('admin', AdmiController::class);
+Route::resource('inmueble', InmuebleController::class);
+
 
 
 
@@ -91,9 +95,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-
-
-Route::get('/reservas-pendientes', [BookingController::class, 'index'])->name('pendientes');
 Route::get('/reservas-realizadas', [BookingController::class, 'realizadas'])->name('realizadas');
 
 Route::get('/informes-anuales', [InformeController::class, 'index'])->name('anuales');
@@ -105,6 +106,5 @@ Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
 
 Route::get('/cupon-consumidos', [CuponController::class,'consumidos'])->name('consumidos'); // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR CUPON
 
-Route::get('/admi-administradores', [AdmiController::class, 'administradores'])->name('administradores');
 
 

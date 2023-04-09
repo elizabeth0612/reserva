@@ -17,7 +17,6 @@ class Propertie extends Model
         'reglas_propiedad',
         'seguridad_propiedad',
         'politicas_cancelacion',
-        'province_id',
         'district_id',
         'estado'
     ];

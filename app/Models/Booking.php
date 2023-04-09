@@ -15,9 +15,11 @@ class Booking extends Model
         'fecha_entrada',
         'fecha_salida',
         'fecha_registro',
+        'pago_costo',
         'estado',
         'user_id',
         'coupon_id',
-        'propertie_id'
+        'propertie_id',
+        'type_payment_id'
     ];
 }
