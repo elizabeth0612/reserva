@@ -28,7 +28,7 @@ class PropertieFactory extends Factory
             'reglas_propiedad' => fake()->name(),
             'seguridad_propiedad' => fake()->name(),
             'politicas_cancelacion' => fake()->name(),
-            'district_id' => 1,
+            'district_id' =>fake()->numberBetween(1, 2),
             'estado' => 1,
         ];
     }
