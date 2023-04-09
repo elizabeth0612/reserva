@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\District;
+use App\Models\Booking;
 
 
 
 class Propertie extends Model
 {
     protected $with = ['district'];
+
+
     use HasFactory;
     protected $fillable = [
         'nombre',
@@ -31,4 +34,10 @@ class Propertie extends Model
 
         return $this->belongsTo(District::class);
     }
+
+    public function booking(): HasMany
+    {
+        return $this->HasMany(Booking::class);
+    }
+
 }
