@@ -3,7 +3,7 @@
     <x-navbars.sidebar activePage="user-management"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <x-navbars.navs.auth titlePage="User Management"></x-navbars.navs.auth>
-        <h1>LISTA DE CLIENTES</h1>
+        <h1>USUARIOS</h1>
     </main>
     <x-plugins></x-plugins>
 

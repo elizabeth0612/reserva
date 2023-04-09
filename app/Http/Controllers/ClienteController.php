@@ -16,21 +16,21 @@ class ClienteController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $clientes =User::where('role',0)->get();
+            $clientes =User::where('role',3)->get();
             return Datatables::of($clientes)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-   
+
                            $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
-   
+
                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
-    
+
                             return $btn;
                     })
                     ->rawColumns(['action'])
                     ->make(true);
         }
-      
+
         return view('pages.laravel-examples.user-management');
     }
 
@@ -53,7 +53,15 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         User::updateOrCreate(['id' => $request->id],
-        ['name' => $request->name, 'about' => $request->about]);        
+        [
+        'name' => $request->name,
+        'email' => $request->email,
+        'location' => $request->location,
+        'phone' => $request->phone,
+        'dni' => $request->dni,
+        'about' => $request->about,
+        'role' => 3,
+    ]);
 
         return response()->json(['success'=>'Post saved successfully.']);
     }
@@ -77,7 +85,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        
+
         $cliente = User::find($id);
         return response()->json($cliente);
     }
@@ -103,7 +111,7 @@ class ClienteController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-     
+
         return response()->json(['success'=>'Post deleted successfully.']);
     }
 }

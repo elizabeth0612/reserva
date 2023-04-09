@@ -54,9 +54,15 @@ class AdmiController extends Controller
     public function store(Request $request)
     {
         User::updateOrCreate(['id' => $request->id],
-        ['name' => $request->name, 'about' => $request->about,
-        'phone' => $request->phone, 'location' => $request->location,
-        'email' => $request->email]);
+        [
+        'name' => $request->name,
+        'last_name' => $request->last_name,
+        'email' => $request->email,
+        'location' => $request->location,
+        'phone' => $request->phone,
+        'dni' => $request->phone,
+        'role' => 1,
+    ]);
 
         return response()->json(['success'=>'Post saved successfully.']);
     }

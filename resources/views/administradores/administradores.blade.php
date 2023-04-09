@@ -17,7 +17,7 @@
 
                             <div class="container-sm">
                                 <h1>Lista de Adminstradores</h1>
-                                <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Cliente</a>
+                                <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregan Administradores</a>
                                 <table class="table table-bordered data-table">
                                     <thead>
                                         <tr><th>Codigo</th>
@@ -51,9 +51,9 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="col-sm-2 control-label">Apellidos</label>
+                                                        <label for="name" class="col-sm-2 control-label">Apellido</label>
                                                         <div class="col-sm-12">
-                                                            <textarea id="about" name="about" required placeholder="Enter Description" class="form-control"></textarea>
+                                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Name" value="" required>
                                                         </div>
                                                     </div>
 
@@ -116,7 +116,7 @@
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
-            {data: 'about', name: 'about'},
+            {data: 'last_name', name: 'last_name'},
             {data: 'phone', name: 'phone'},
             {data: 'location', name: 'location'},
             {data: 'email', name: 'email'},
@@ -138,7 +138,7 @@
           $('#ajaxModelexa').modal('show');
           $('#id').val(data.id);
           $('#name').val(data.name);
-          $('#about').val(data.about);
+          $('#last_name').val(data.last_name);
           $('#phone').val(data.phone);
           $('#location').val(data.location);
           $('#email').val(data.email);

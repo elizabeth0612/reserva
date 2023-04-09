@@ -18,7 +18,6 @@
 
         <div class="container-sm">
             <h1>Lista de Reservas pendientes</h1>
-            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Reservas</a>
             <table class="table table-bordered data-table">
                 <thead>
                     <tr>
@@ -34,7 +33,6 @@
                         <th>Cupon </th>
                         <th>Propiedad  </th>
                         <th>Tipo de pago</th>
-                        <th width="280px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -140,10 +138,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-primary" id="savedata" value="create">Guardar
-                                </button>
-                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -179,7 +174,6 @@
             {data: 'coupon_id', name: 'coupon_id'},
             {data: 'propertie_id', name: 'propertie_id'},
             {data: 'type_payment_id', name: 'type_payment_id'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
 

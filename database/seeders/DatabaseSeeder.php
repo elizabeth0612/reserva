@@ -26,24 +26,60 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Admin',
+            'last_name' => "Smit",
+            'dni' => 72844014,
             'email' => 'admin@material.com',
-            'password' => ('secret')
+            'password' => ('secret'),
+            'role' => 1,
         ])->assignRole('administrador');
 
         User::factory()->create([
             'name' => 'Gerente',
+            'last_name' => "Montalvo",
+            'dni' => 78451254,
             'email' => 'gerente@material.com',
             'password' => ('secret'),
+            'role' => 2,
         ])->assignRole('gerente');
+
+        User::factory()->create([
+            'name' => 'cliente',
+            'last_name' => "juan",
+            'dni' => 23456789,
+            'email' => 'juan@material.com',
+            'password' => ('secret'),
+            'role' => 3,
+        ])->assignRole('cliente');
+
+
+        User::factory()->create([
+            'name' => 'cliente',
+            'last_name' => "david",
+            'dni' => 12345678,
+            'email' => 'david@material.com',
+            'password' => ('secret'),
+            'role' => 3,
+        ])->assignRole('gerente');
+
+
 
         Province::create([
             'nombre' => 'lima',
+        ]);
+
+        Province::create([
+            'nombre' => 'Arequipa',
         ]);
 
         District::create([
            'nombre' => 'Comas',
            'province_id' => 1,
         ]);
+
+        District::create([
+            'nombre' => 'San juan',
+            'province_id' => 2,
+         ]);
 
         TypePayment::create([
             'nombre' => 'Tajeta',

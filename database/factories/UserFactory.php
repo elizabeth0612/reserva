@@ -20,11 +20,12 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'last_name' => fake()->name(),
             'email' => fake()->name(),
             'email_verified_at' => now(),
             'phone' => fake()->name(),
+            'dni' => fake()->name(),
             'location' => fake()->name(),
-            'about' => fake()->name(),
             'password' => '123', // password
             'remember_token' => Str::random(10),
         ];

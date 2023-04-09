@@ -65,6 +65,7 @@ class InmuebleController extends Controller
         'seguridad_propiedad' => $request->seguridad_propiedad,
         'politicas_cancelacion' => $request->politicas_cancelacion,
         'district_id' => $request->district_id,
+        'estado' => 1,
         ]);
 
         return response()->json(['success'=>'Post saved successfully.']);

@@ -76,12 +76,18 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         Booking::updateOrCreate(['id' => $request->id],
-        ['precio' => $request->precio, 'huespedes' => $request->huespedes,
-        'cantidad_dias' => $request->cantidad_dias, 'fecha_entrada' => $request->fecha_entrada,
-        'fecha_salida' => $request->fecha_salida,'fecha_registro' => $request->fecha_registro,
-        'pago_costo' => $request->pago_costo, 'user_id' => $request->user_id,
-        'coupon_id' => $request->coupon_id,'propertie_id' => $request->propertie_id,
-        'type_payment_id' => $request->type_payment_id
+        ['precio' => $request->precio,
+        'huespedes' => $request->huespedes,
+        'cantidad_dias' => $request->cantidad_dias,
+        'fecha_entrada' => $request->fecha_entrada,
+        'fecha_salida' => $request->fecha_salida,
+        'fecha_registro' => $request->fecha_registro,
+        'pago_costo' => $request->pago_costo,
+        'user_id' => $request->user_id,
+        'coupon_id' => $request->coupon_id,
+        'propertie_id' => $request->propertie_id,
+        'type_payment_id' => $request->type_payment_id,
+        'estado' =>0,
     ]);
 
         return response()->json(['success'=>'Post saved successfully.']);
