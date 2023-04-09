@@ -4,9 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\District;
+
+
 
 class Propertie extends Model
 {
+    protected $with = ['district'];
     use HasFactory;
     protected $fillable = [
         'nombre',
@@ -20,4 +25,10 @@ class Propertie extends Model
         'district_id',
         'estado'
     ];
+
+    public function district(): BelongsTo
+    {
+
+        return $this->belongsTo(District::class);
+    }
 }

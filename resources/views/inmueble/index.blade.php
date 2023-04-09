@@ -30,7 +30,7 @@
                         <th>reglas_propiedad</th>
                         <th>seguridad_propiedad</th>
                         <th>politicas_cancelacion </th>
-                        <th>district_id</th>
+                        <th>Distrito</th>
                         <th width="280px">Action</th>
                     </tr>
                 </thead>
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">district_id</label>
+                                <label for="name" class="col-sm-2 control-label">Distrito</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="district_id" name="district_id"
                                         placeholder="Enter Name" value="" required>
@@ -155,7 +155,7 @@
             {data: 'reglas_propiedad', name: 'reglas_propiedad'},
             {data: 'seguridad_propiedad', name: 'seguridad_propiedad'},
             {data: 'politicas_cancelacion', name: 'politicas_cancelacion'},
-            {data: 'district_id', name: 'district_id'},
+            {data: 'district.nombre' ,name: 'district.nombre'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });

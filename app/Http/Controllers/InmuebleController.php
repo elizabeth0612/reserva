@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use Illuminate\Http\Request;
 use App\Models\Propertie;
 use DataTables;
@@ -18,8 +19,10 @@ class InmuebleController extends Controller
         //
     if ($request->ajax()) {
         $inmuebles=Propertie::where('estado',1)->get();
-        return Datatables::of($inmuebles)
+        $districts=Propertie::with('district')->get();
+        return Datatables::of($inmuebles,$districts)
                 ->addIndexColumn()
+
                 ->addColumn('action', function($row){
 
                        $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
