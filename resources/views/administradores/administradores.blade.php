@@ -143,7 +143,7 @@
             $('#savedata').val("create-post");
             $('#id').val('');
             $('#postForm').trigger("reset");
-            $('#modelHeading').html("Agregando un Cliente");
+            $('#modelHeading').html("Agregando Administrador");
             $('#ajaxModelexa').modal('show');
         });
         $('body').on('click', '.editPost', function() {

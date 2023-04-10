@@ -200,7 +200,7 @@
             $('#savedata').val("create-post");
             $('#id').val('');
             $('#postForm').trigger("reset");
-            $('#modelHeading').html("Agregando un Cliente");
+            $('#modelHeading').html("Agregando Reservas");
             $('#ajaxModelexa').modal('show');
         });
         $('body').on('click', '.editPost', function() {

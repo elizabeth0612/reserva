@@ -17,7 +17,7 @@
 
         <div class="container-sm">
             <h1>Lista de Cupones - Vigentes</h1>
-            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar Cupon</a>
+            <a class="btn btn-info" href="javascript:void(0)" id="createNewPost"> Agregar</a>
             <table class="table table-bordered data-table">
                 <thead>
                     <tr>
@@ -114,7 +114,7 @@
             $('#savedata').val("create-post");
             $('#id').val('');
             $('#postForm').trigger("reset");
-            $('#modelHeading').html("Agregando un Cliente");
+            $('#modelHeading').html("Agregando Cupon");
             $('#ajaxModelexa').modal('show');
         });
         $('body').on('click', '.editPost', function() {
