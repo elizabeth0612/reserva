@@ -105,5 +105,5 @@ Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
 
 Route::get('/cupon-consumidos', [CuponController::class,'consumidos'])->name('consumidos'); // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR CUPON
 
-Route::get('/informe-anual', [InformeController::class,'informe_anual'])->name('anual');  // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR INFORME
+Route::get('/informe-anual', [InformeController::class,'anual'])->name('anual');  // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR INFORME
 

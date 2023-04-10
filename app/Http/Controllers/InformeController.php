@@ -17,8 +17,8 @@ class InformeController extends Controller
     {
         //informe mensual
         if ($request->ajax()) {
-            $reservas=Booking::get();
-            return Datatables::of($reservas)
+            $informes=Booking::whereMonth('fecha_registro', now()->month)->get();
+            return Datatables::of($informes)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
 
@@ -35,11 +35,25 @@ class InformeController extends Controller
         return view('informes.informes_mensuales');
     }
 
-    public function informe_anual()
+    public function anual(Request $request)
     {
         //
-        $informes=Booking::where('estado',0)->get();
-        return view('informes.informes_anuales',compact('informes') );
+        if ($request->ajax()) {
+            $informes=Booking::whereYear('fecha_registro', now()->year)->get();
+            return Datatables::of($informes)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+        return view('informes.informes_anuales');
     }
 
     /**

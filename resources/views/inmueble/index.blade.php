@@ -119,18 +119,18 @@
                                         <select class="form-select" id="provincia" aria-label="Default select example">
                                             <option selected>Escoger</option>
                                             @foreach ($provincias as $provincia)
-                                                
+
                                                 <option value="{{$provincia->id}}">{{$provincia->nombre}}</option>
-                                                
+
                                             @endforeach
                                         </select>
                             </div>
-                               
-                            
+
+
                             <div class="form-group ms-3">
                             <label for="name" class="col-sm-12control-label">Distrito</label>
                                     <select class="form-select"  aria-label="Default select example" name="district_id" id="district_id">
-                                        
+
                                     </select>
                             </div>
 
@@ -234,9 +234,9 @@
                     console.log(item);
                     $('<option value="'+item.id+'">'+item.nombre+'</option>').appendTo("#district_id");
                 });
-                
 
-      
+
+
             });
         });
         $('#savedata').click(function(e) {

@@ -137,16 +137,16 @@
             "previous": "Anterior"
             }
         },
-            ajax: "{{ route('informes.index') }}",
+            ajax: "{{ route('anual') }}",
             columns: [
-                {data: 'user.name', name: 'user.name'},
-                {data: 'huespedes', name: 'huespedes'},
+                {data: 'fecha_registro', name: 'fecha_registro'},
+                {data: 'fecha_registro', name: 'fecha_registro'},
                 {data: 'cantidad_dias', name: 'cantidad_dias'},
                 {data: 'fecha_entrada', name: 'fecha_entrada'},
                 {data: 'fecha_salida', name: 'fecha_salida'},
                 {data: 'fecha_registro', name: 'fecha_registro'},
                 {data: 'pago_costo', name: 'pago_costo'},
-              
+
             ]
         });
         $('#createNewPost').click(function() {

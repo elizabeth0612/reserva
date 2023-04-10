@@ -146,7 +146,7 @@
                 {data: 'fecha_salida', name: 'fecha_salida'},
                 {data: 'fecha_registro', name: 'fecha_registro'},
                 {data: 'pago_costo', name: 'pago_costo'},
-              
+
             ]
         });
         $('#createNewPost').click(function() {
