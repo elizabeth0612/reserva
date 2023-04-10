@@ -107,7 +107,6 @@
 </x-layout>
 <script type="text/javascript">
     $(function() {
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -117,6 +116,26 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
+            language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando Pagina _START_ con _TOTAL_ Registros",
+            "infoEmpty": "Sin resultados encontrados en la cantidad",
+            "infoFiltered": " total de _MAX_ registros",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Registros",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+            }
+        },
             ajax: "{{ route('clientes.index') }}",
             columns: [
                 {data: 'name', name: 'name'},
