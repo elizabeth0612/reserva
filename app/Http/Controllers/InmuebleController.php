@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\District;
 use Illuminate\Http\Request;
 use App\Models\Propertie;
+use App\Models\Province;
 use DataTables;
 
 class InmuebleController extends Controller
@@ -16,9 +17,10 @@ class InmuebleController extends Controller
      */
     public function index(Request $request)
     {
-        //
+        $provincias=Province::all();
     if ($request->ajax()) {
         $inmuebles=Propertie::where('estado',1)->get();
+        
 
         return Datatables::of($inmuebles)
                 ->addIndexColumn()
@@ -34,7 +36,7 @@ class InmuebleController extends Controller
                 ->make(true);
     }
 
-    return view('inmueble.index' );
+    return view('inmueble.index',compact('provincias'));
 }
 
     /**

@@ -54,7 +54,7 @@
                                 <label for="name" class="col-sm-2 control-label">Nombre</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="nombre" name="nombre"
-                                        placeholder="Enter Name" value="" required>
+                                         value="" required>
                                 </div>
                             </div>
 
@@ -62,7 +62,7 @@
                                 <label for="name" class="col-sm-2 control-label">Descripcion</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="descripcion" name="descripcion"
-                                        placeholder="Enter Name" value="" required>
+                                        value="" required>
                                 </div>
                             </div>
 
@@ -70,7 +70,7 @@
                                 <label for="name" class="col-sm-2 control-label">Imagenes</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="imagenes" name="imagenes"
-                                        placeholder="Enter Name" value="" required>
+                                         value="" required>
                                 </div>
                             </div>
 
@@ -78,7 +78,7 @@
                                 <label for="name" class="col-sm-2 control-label">Precio_Noche</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="precio_noche" name="precio_noche"
-                                        placeholder="Enter Name" value="" required>
+                                         value="" required>
                                 </div>
                             </div>
 
@@ -86,7 +86,7 @@
                                 <label for="name" class="col-sm-2 control-label">Informacion</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="informacion" name="informacion"
-                                        placeholder="Enter Name" value="" required>
+                                         value="" required>
                                 </div>
                             </div>
 
@@ -94,7 +94,7 @@
                                 <label for="name" class="col-sm-2 control-label">Reglas_Propiedad</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="reglas_propiedad"
-                                        name="reglas_propiedad" placeholder="Enter Name" value="" required>
+                                        name="reglas_propiedad" value="" required>
                                 </div>
                             </div>
 
@@ -102,7 +102,7 @@
                                 <label for="name" class="col-sm-2 control-label">Seguridad_Propiedad</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="seguridad_propiedad"
-                                        name="seguridad_propiedad" placeholder="Enter Name" value="" required>
+                                        name="seguridad_propiedad"  value="" required>
                                 </div>
                             </div>
 
@@ -110,17 +110,29 @@
                                 <label for="name" class="col-sm-2 control-label">Politicas_Cancelacion</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control" id="politicas_cancelacion"
-                                        name="politicas_cancelacion" placeholder="Enter Name" value=""
+                                        name="politicas_cancelacion"  value=""
                                         required>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Distrito</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="district_id" name="district_id"
-                                        placeholder="Enter Name" value="" required>
-                                </div>
+                            <div class="form-group ms-3">
+                                <label for="name" class="col-sm-12control-label">Provincia</label>
+                                        <select class="form-select" name="escoger_mascota" aria-label="Default select example">
+                                            <option selected>Escoger</option>
+                                            @foreach ($provincias as $provincia)
+                                                <option value="{{$provincia->id}}">{{$provincia->nombre}}</option>
+                                            @endforeach
+                                        </select>
+                            </div>
+                               
+                            
+                            <div class="form-group ms-3">
+                            <label for="name" class="col-sm-12control-label">Distrito</label>
+                                    <select class="form-select" name="escoger_mascota" aria-label="Default select example">
+                                        <option selected>Escoger</option>
+                                        <option value="1">Gato</option>
+                                        <option value="2">Perro</option>
+                                        <option value="3">Conejo</option>
+                                    </select>
                             </div>
 
                             <div class="col-sm-offset-2 col-sm-10">
