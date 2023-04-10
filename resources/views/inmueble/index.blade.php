@@ -31,7 +31,7 @@
                         <th>Seguridad_Propiedad</th>
                         <th>Politicas_Cancelacion </th>
                         <th>Distrito</th>
-                        <th width="280px">Action</th>
+                        <th width="280px">Opciones</th>
                     </tr>
                 </thead>
             </table>

@@ -23,7 +23,7 @@
                     <tr>
                         <th>Codigo</th>
                         <th>Descuento</th>
-                        <th width="280px">Action</th>
+                        <th width="280px">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>

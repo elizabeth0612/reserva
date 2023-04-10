@@ -28,7 +28,7 @@
                         <th>Telefono</th>
                         <th>Direccion</th>
                         <th>Correo</th>
-                        <th width="280px">Action</th>
+                        <th width="280px">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
