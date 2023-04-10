@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
-
+use DataTables;
 
 class InformeController extends Controller
 {
@@ -13,14 +13,29 @@ class InformeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $informes=Booking::where('estado',0)->get();
-        return view('informes.informes_mensuales',compact('informes') );
+        //informe mensual
+        if ($request->ajax()) {
+            $reservas=Booking::get();
+            return Datatables::of($reservas)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Edit</a>';
+
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('informes.informes_mensuales');
     }
 
-    public function informe()
+    public function informe_anual()
     {
         //
         $informes=Booking::where('estado',0)->get();

@@ -110,7 +110,7 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#headingOne">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <a class="nav-link text-white" href="{{ route('anuales') }}">
+                            <a class="nav-link text-white" href="{{ route('anual') }}">
                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                     <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                 </div>
@@ -118,7 +118,7 @@
                             </a>
                         </div>
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <a class="nav-link text-white" href="{{ route('mensuales') }}">
+                            <a class="nav-link text-white" href="{{ route('informes.index') }}">
                                 <div class="text-white text-center me-1 d-flex align-items-center justify-content-center">
                                     <i style="font-size: 1.2rem;" class="fas fa-user-circle text-center"></i>
                                 </div>

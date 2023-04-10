@@ -41,6 +41,8 @@ Route::resource('cupon', CuponController::class);
 Route::resource('booking', BookingController::class);
 Route::resource('admin', AdmiController::class);
 Route::resource('inmueble', InmuebleController::class);
+Route::resource('informes', InformeController::class);
+
 
 
 
@@ -97,14 +99,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/reservas-realizadas', [BookingController::class, 'realizadas'])->name('realizadas');
 
-Route::get('/informes-anuales', [InformeController::class, 'index'])->name('anuales');
-Route::get('/informes-mensuales', [InformeController::class, 'informe'])->name('mensuales');
-
 Route::get('/inmueble-inmueble', [InmuebleController::class, 'index'])->name('inmueble');
 
 Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
 
 Route::get('/cupon-consumidos', [CuponController::class,'consumidos'])->name('consumidos'); // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR CUPON
 
-
+Route::get('/informe-anual', [InformeController::class,'informe_anual'])->name('anual');  // IMPLEMENTANDO UN NUEVO METODO AL CONTROLADOR INFORME
 
