@@ -41,6 +41,7 @@ Route::resource('cupon', CuponController::class);
 Route::resource('booking', BookingController::class);
 Route::resource('admin', AdmiController::class);
 Route::resource('inmueble', InmuebleController::class);
+Route::get('distrito/{id}', [InmuebleController::class, 'provincias'])->name('distrito');
 Route::resource('informes', InformeController::class);
 
 
@@ -99,7 +100,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/reservas-realizadas', [BookingController::class, 'realizadas'])->name('realizadas');
 
-Route::get('/inmueble-inmueble', [InmuebleController::class, 'index'])->name('inmueble');
 
 Route::get('/admi-admi', [AdmiController::class, 'index'])->name('admi');
 

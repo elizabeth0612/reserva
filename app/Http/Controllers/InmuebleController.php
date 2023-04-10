@@ -18,23 +18,24 @@ class InmuebleController extends Controller
     public function index(Request $request)
     {
         $provincias=Province::all();
-    if ($request->ajax()) {
-        $inmuebles=Propertie::where('estado',1)->get();
-        
+            
+        if ($request->ajax()) {
+            $inmuebles=Propertie::where('estado',1)->get();
+            
 
-        return Datatables::of($inmuebles)
-                ->addIndexColumn()
+            return Datatables::of($inmuebles)
+                    ->addIndexColumn()
 
-                ->addColumn('action', function($row){
+                    ->addColumn('action', function($row){
 
-                    $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Editar</a>';
+                        $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editPost">Editar</a>';
 
-                    $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Eliminar</a>';
-                        return $btn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-    }
+                        $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Eliminar</a>';
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
 
     return view('inmueble.index',compact('provincias'));
 }
@@ -47,6 +48,13 @@ class InmuebleController extends Controller
     public function create()
     {
         //
+    }
+
+    public function provincias($id)
+    {
+       $distritos=District::where('province_id',$id)->get();
+       return response()->json($distritos);
+       
     }
 
     /**

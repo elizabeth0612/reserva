@@ -116,10 +116,12 @@
                             </div>
                             <div class="form-group ms-3">
                                 <label for="name" class="col-sm-12control-label">Provincia</label>
-                                        <select class="form-select" name="escoger_mascota" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" aria-label="Default select example">
                                             <option selected>Escoger</option>
                                             @foreach ($provincias as $provincia)
+                                                
                                                 <option value="{{$provincia->id}}">{{$provincia->nombre}}</option>
+                                                
                                             @endforeach
                                         </select>
                             </div>
@@ -127,11 +129,8 @@
                             
                             <div class="form-group ms-3">
                             <label for="name" class="col-sm-12control-label">Distrito</label>
-                                    <select class="form-select" name="escoger_mascota" aria-label="Default select example">
-                                        <option selected>Escoger</option>
-                                        <option value="1">Gato</option>
-                                        <option value="2">Perro</option>
-                                        <option value="3">Conejo</option>
+                                    <select class="form-select"  aria-label="Default select example" name="district_id" id="district_id">
+                                        
                                     </select>
                             </div>
 
@@ -220,6 +219,25 @@
                 $('#politicas_cancelacion').val(data.politicas_cancelacion);
                 $('#district_id').val(data.district.nombre);
             })
+        });
+        $('#provincia').change(function() {
+
+            console.log($(this).val());
+            var id = $(this).val();
+
+            $("#district_id").empty();
+
+            $.get("distrito/"+id , function(data) {
+                console.log(data);
+
+                $.each(data, function(i, item) {
+                    console.log(item);
+                    $('<option value="'+item.id+'">'+item.nombre+'</option>').appendTo("#district_id");
+                });
+                
+
+      
+            });
         });
         $('#savedata').click(function(e) {
             e.preventDefault();
