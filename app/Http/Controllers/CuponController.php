@@ -74,7 +74,9 @@ class CuponController extends Controller
     public function store(Request $request)
     {
         Coupon::updateOrCreate(['id' => $request->id],
-        ['descuento' => $request->descuento]);
+        ['descuento' => $request->descuento,
+        'estado' =>1,
+        ]);
 
         return response()->json(['success'=>'Post saved successfully.']);
     }
