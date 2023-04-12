@@ -389,7 +389,7 @@ display: none;
   background-image: url('/img/subtle-prism.png');
   position: absolute;
   border-radius: 6px;
-  -webkit-transform-style: preserve-3d; /*no tocar por fa*/
+  /* -webkit-transform-style: preserve-3d; no tocar por fa */
 }
 .card-back {
   transform: rotateY(180deg);
@@ -469,4 +469,62 @@ display: none;
   background-color: #000000;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+
+/*----------------------------------------------------------------*/
+
+.articulo_descripcion{
+  border: solid 1px ;
+  margin-top: 50px;
+  padding: 15px;
+}
+
+.imagen_casa{
+  width: 80%;
+  margin: 20px 10%;
+}
+.titulo_index{
+  text-align: center;
+}
+.boton_reserva{
+  margin-left: 35%;
+}
+@media (min-width: 576px)  {
+
+.articulo_descripcion{
+   
+      width: 50%;
+      height: auto;
+      display: inline-block;
+      margin-left: 25%;
+  }
+  .boton_reserva{
+      margin-left: 35%;
+  }
+}
+@media (min-width: 820px)  {
+
+  article .articulo_descripcion{
+ 
+      width: 27%;
+      height: auto;
+      display: inline-block;
+      margin-left: 15px;
+  }
+  .boton_reserva{
+      margin-left: 35%;
+  }
+}
+@media (min-width: 1300px)  {
+
+  .articulo_descripcion{
+
+      width: 27%;
+      height: auto;
+      display: inline-block;
+      margin-left: 35px;
+  }
+  .boton_reserva{
+      margin-left: 35%;
+  }
 }

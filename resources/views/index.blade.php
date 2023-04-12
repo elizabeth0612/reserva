@@ -93,7 +93,30 @@
 </header>
 
 <body>
+ <h2 class="titulo_index">Titulo de pagina</h2>
+    <div class="contendor_descripcion">
+        <article class="articulo_descripcion">
+            <h2>Casa de playa en alquiler  </h2>
+            <img src="imagen.png" class="imagen_casa" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos iste voluptates at, deleniti minus cupiditate consequatur perspiciatis excepturi, dolores sed delectus consectetur assumenda? Numquam in aperiam cumque molestiae assumenda!</p>
+            <button type="submit"class="boton_reserva">Reservar</button>
+            
+        </article>
 
+        <article class="articulo_descripcion">
+            <h2>Playa caballero punta</h2>
+            <img src="imagen.png" class="imagen_casa" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos iste voluptates at, deleniti minus cupiditate consequatur perspiciatis excepturi, dolores sed delectus consectetur assumenda? Numquam in aperiam cumque molestiae assumenda!</p>
+            <button type="submit" class="boton_reserva">Reservar</button>
+        </article>
+
+        <article class="articulo_descripcion">
+            <h2>Playa Cuzco, Miraflores </h2>
+            <img src="imagen.png" class="imagen_casa" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos iste voluptates at, deleniti minus cupiditate consequatur perspiciatis excepturi, dolores sed delectus consectetur assumenda? Numquam in aperiam cumque molestiae assumenda!</p>
+            <button type="submit" class="boton_reserva">Reservar</button>
+        </article>
+    </div>
 
 </body>
 
