@@ -24,12 +24,10 @@ use App\Http\Controllers\CuponController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -48,7 +46,7 @@ Route::resource('informes', InformeController::class);
 
 
 
-Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
+//Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
