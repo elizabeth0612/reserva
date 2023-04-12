@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<head> 
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ramirez Bungalows</title>
 
@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.111.3">
 
     <link rel="canonical" href="https://icons.getbootstrap.com/">
-   
+
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
 
     <script src="./boostrap_files/color-modes.js.descarga"></script>
@@ -28,8 +28,8 @@
     <a class="navbar-brand p-0 me-0 me-lg-2" href="index.html" aria-label="Bootstrap">
       <img src="./img/logotipoR.jpg" class="imagen_logotipo" alt="">
     </a>
-    <span class="titulo_cabecera">Ramirez Bungalows</span>    
-  
+    <span class="titulo_cabecera">Ramirez Bungalows</span>
+
     <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <i class="navbar-toggler-icon" aria-hidden="true"></i>
     </button>
@@ -58,7 +58,7 @@
           <li class="nav-item col-6 col-lg-auto">
             <a class="nav-link py-2 px-0 px-lg-2" href="#" id="subtitulo_nav"  rel="noopener">Contacto</a>
           </li>
-          
+
         </ul>
 
         <!-- para la lineas en la separacion -->
@@ -71,10 +71,10 @@
             <hr class="d-lg-none my-2 text-white-50">
           </li>
         </ul>
-        
+
 <!-- etiqueta para el login y registro icono -user / iniciar sesion y registrarse -->
-                  
-          
+
+
             <div class="dropdown">
               <a class="" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="true">
                 <svg xmlns="http://www.w3.org/2000/svg" id="user" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -83,18 +83,18 @@
                   </svg>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Iniciar sesion</a></li>
-                <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                <li><a class="dropdown-item" href="{{ route('login') }}">Iniciar sesion</a></li>
+                <li><a class="dropdown-item" href="{{ route('register') }}">Registrarse</a></li>
               </ul>
             </div>
-          
+
     </div>
   </nav>
 </header>
 
 <body>
-       
-   
+
+
 </body>
 
 
