@@ -72,7 +72,7 @@
           </li>
         </ul>
         
-<!-- etiqueta para el login y registro -->
+<!-- etiqueta para el login y registro icono -user / iniciar sesion y registrarse -->
                   
           
             <div class="dropdown">
@@ -83,9 +83,8 @@
                   </svg>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Iniciar sesion</a></li>
+                <li><a class="dropdown-item" href="#">Registrarse</a></li>
               </ul>
             </div>
           
